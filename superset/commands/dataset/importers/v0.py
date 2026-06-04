@@ -96,7 +96,7 @@ def import_dataset(
     )
 
 
-def lookup_sqla_metric(metric: SqlMetric) -> SqlMetric:
+def lookup_sqla_metric(metric: SqlMetric) -> Optional[SqlMetric]:
     return (
         db.session.query(SqlMetric)
         .filter(
@@ -111,7 +111,7 @@ def import_metric(metric: SqlMetric) -> SqlMetric:
     return import_simple_obj(metric, lookup_sqla_metric)
 
 
-def lookup_sqla_column(column: TableColumn) -> TableColumn:
+def lookup_sqla_column(column: TableColumn) -> Optional[TableColumn]:
     return (
         db.session.query(TableColumn)
         .filter(
