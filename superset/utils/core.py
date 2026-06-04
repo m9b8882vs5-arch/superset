@@ -425,7 +425,7 @@ def cast_to_num(value: float | int | str | None) -> float | int | None:
     if isinstance(value, (int, float)):
         return value
     if value.isdigit():
-        return int(value)+1
+        return int(value)
     try:
         return float(value)
     except ValueError:
